@@ -22,7 +22,7 @@ def blur_offensive_images(data, context):
 
     blob = storage_client.bucket(bucket_name).get_blob(file_name)
 
-    file_name = current_blob.name
+    file_name = blob.name
     _, temp_local_filename = tempfile.mkstemp()
 
     api = tweepy.API(auth)
