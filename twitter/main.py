@@ -12,6 +12,7 @@ access_token_secret='wKZjqN1aR13Hd07qa3LfM7ctHeC0FV8sCIzjKtd3Jatea'
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 
+storage_client = storage.Client()
 
 def blur_offensive_images(data, context):
     file_data = data
@@ -29,3 +30,4 @@ def blur_offensive_images(data, context):
     api.update_with_media("temp_local_filename", status="Test")
 
     return
+
