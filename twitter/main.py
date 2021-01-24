@@ -19,17 +19,21 @@ def blur_offensive_images(data, context):
 
     file_name = file_data["name"]
     bucket_name = file_data["bucket"]
+    
 
     blob = storage_client.bucket(bucket_name).get_blob(file_name)
-
+    blob_uri = f"gs://{bucket_name}/{file_name}"
+    blob_source =vision.Image(source=vision.ImageSource(image_uri=blob_uri))
+    
     file_name = blob.name
     _, temp_local_filename = tempfile.mkstemp()
     
-    blob_uri = f"gs://{bucket_name}/{file_name}"
+    
+    current_blob.download_to_filename(temp_local_filename)
 
     api = tweepy.API(auth)
 
-    api.update_with_media(blob_uri, status="Test")
+    api.update_with_media(temp_local_filename, status="Test")
 
     return
 
