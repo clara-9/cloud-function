@@ -1,6 +1,8 @@
 import os
 import tempfile
 import tweepy
+import random
+
 from wand.image import Image
 
 from google.cloud import storage, vision
@@ -33,8 +35,12 @@ def blur_offensive_images(data, context):
     blob.download_to_filename(temp_local_filename)
 
     api = tweepy.API(auth)
+    
+    tweets=["Stop Hostile Architecture! We want our streets back.","This should not exist in our public spaces", "#hostilearchiteture"]
+    
+    tweet_content=random.choice(tweets)
 
-    api.update_with_media(temp_local_filename, status="Test")
+    api.update_with_media(temp_local_filename, status=tweet_content)
 
     return
 
