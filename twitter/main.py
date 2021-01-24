@@ -7,10 +7,10 @@ from wand.image import Image
 
 from google.cloud import storage, vision
 
-consumer_key= os.environ.get('consumer_key')
-consumer_secret=os.environ.get('consumer_secret')
-access_token=os.environ.get('access_token')
-access_token_secret=os.environ.get('access_token_secret')
+consumer_key= "xFolTwovC5RYsLMHIKg0DRXj7"
+consumer_secret= "dvkrGsxivIYSq3E61OTZXpGedxn93svN3gf4l6OwlOhIMaBAKP"
+access_token="1353209823911956481-a7Gf8m3LtCRTLo2L3UiwekvMUMUjPf"
+access_token_secret=o"gMRG4f3g751fF1FRENzjqcewCYwQFbnkvKL31gRtllyNt"
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
