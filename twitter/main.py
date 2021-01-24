@@ -30,7 +30,7 @@ def blur_offensive_images(data, context):
     _, temp_local_filename = tempfile.mkstemp()
     
     
-    current_blob.download_to_filename(temp_local_filename)
+    blob.download_to_filename(temp_local_filename)
 
     api = tweepy.API(auth)
 
