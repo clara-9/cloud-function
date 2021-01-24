@@ -1,8 +1,9 @@
 import os
 import tempfile
 import tweepy
+from wand.image import Image
 
-from google.cloud import storage
+from google.cloud import storage, vision
 
 consumer_key= 'zkE1Zp1iUixmXpXyzSBsMaU6f'
 consumer_secret='PiiQ6a0cVMliuIz4XTWgV7g0GX52ielbDq1yB3jCyYxtvt40Ez'
